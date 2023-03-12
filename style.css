@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+/*
+font-family: 'Architects Daughter', cursive;
+*/
+
+body{
+    background-color: mediumslateblue;
+    color: white;
+}
+
+header{
+    margin: 50px;
+    padding: 10px;
+}
+h1{
+    font-family: 'Lemon Drink';
+    font-size: 65px;
+}
+
+header, form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    height: 45px;
+    border: none;
+    background: white;
+    border-radius: 30px;
+}
+
+form input{
+    width: 500px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+form button{
+    background: transparent;
+    font-size: 30px;
+    color: white;
+    padding-left: 5px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+    margin-left: 0.5rem;
+}
+
+form button:hover{
+    color: lightskyblue;
+}
+
+form select{
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+
+
