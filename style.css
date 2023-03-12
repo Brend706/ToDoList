@@ -53,16 +53,114 @@ form button{
 }
 
 form button:hover{
-    color: lightskyblue;
+    color: #68da3e;
 }
 
-form select{
+select{
+    font-family: 'Architects Daughter', cursive;
     height: 35px;
+    width: 120px;
     border: none;
     border-radius: 30px;
     padding: 5px;
     margin-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: mediumblue ;
+    cursor: pointer;
 }
 
 
+.lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.tareas{
+    min-width: 30%;
+    list-style: none;
+    display:block;
+}
+
+.to-do{
+    font-family: 'Architects Daughter', cursive;
+    height: 45px;
+    margin-top: 20px;
+    padding-left: 5px;
+    background: white;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.to-do li{
+    flex: 1;
+}
+
+.trash-btn, .complete-btn{
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.complete-btn{
+    background-color: #68da3e;
+}
+
+.trash-btn{
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    background: gray;
+}
+
+.tarea{
+    padding: 0 0.5rem;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.slide{
+    transform: translateX(30rem);
+    opacity: 0;
+    position: fixed;
+}
+
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: blue;
+    top: 0;
+    right: 0;
+    padding: 7px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.select::hover::after{
+    background: white;
+    color: purple;
+}
