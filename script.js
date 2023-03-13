@@ -54,54 +54,56 @@ function deleteCheck(e){
 
 function filtrar(e){
     const tareas = lista.childNodes;
-    tareas.forEach( function(option) {
-        switch(e.target.value){
-            case "all":
-                tareas.style.display = "flex";
+
+    //NO FUNCIONA :(
+    tareas.forEach(function(todo) {
+        switch(e.target.value) {
+            case "all": 
+                todo.style.display = "flex";
                 break;
-            case "completed":
-                if(tareas.classList.contains("completed")){
-                    tareas.style.display = "flex";
-                }else{
-                    tareas.style.display = "none";
+            case "completed": 
+                if(todo.classList.contains("completed")) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
                 }
                 break;
             case "incomplete":
-                if(!tareas.classList.contains("completed")){
-                    tareas.style.display = "flex";
-                }else{
-                    tareas.style.display = "none";
+                if(!todo.classList.contains("completed")) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
                 }
                 break;
         }
     });
 }
 
-function saveLocalList(tarea){
+function saveLocalList(task){
     let tareas;
-    if(localStorage.getItem("option") === null){
+    if(localStorage.getItem("todos") === null){
         tareas = [];
     }else{
-        tareas = JSON.parse(localStorage.getItem("option"));
+        tareas = JSON.parse(localStorage.getItem("todos"));
     }
 
-    tareas.push(tarea);
+    tareas.push(task);
     localStorage.setItem("tareas", JSON.stringify(tareas));
 }
 
 function getLocalTareas(){
     let tareas;
-    if(localStorage.getItem("option") === null){
+    if(localStorage.getItem("todos") === null){
         tareas = [];
     }else{
-        tareas = JSON.parse(localStorage.getItem("option"));
+        tareas = JSON.parse(localStorage.getItem("todos"));
     }
 
-    tareas.forEach( function(tarea){
+    tareas.forEach( function(task){
         const taskDiv =  document.createElement("div");
         taskDiv.classList.add("to-do");
         const nuevaTarea = document.createElement("li");
-        nuevaTarea.innerText = tarea;
+        nuevaTarea.innerText = task;
         nuevaTarea.classList.add("tarea");
         taskDiv.appendChild(nuevaTarea);
 
